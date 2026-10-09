@@ -12258,4 +12258,42 @@ lab/FINDINGS.md:15: trailing whitespace.[m
 [32m+[m[32m**Symptom:** The reporter ServiceAccount did not have the intended permissions through the RoleBinding.[m[41m[7m^M[27m[m[m
 lab/FINDINGS.md:16: trailing whitespace.[m
 [32m+[m[41m[7m^M[27m[m[m
-lab/FIN
+lab/FINDINGS.md:17: trailing whitespace.[m
+[32m+[m[32m**Cause:** The RoleBinding referenced the `default` ServiceAccount instead of `reporter`.[m[41m[7m^M[27m[m[m
+lab/FINDINGS.md:18: trailing whitespace.[m
+[32m+[m[41m[7m^M[27m[m[m
+lab/FINDINGS.md:19: trailing whitespace.[m
+[32m+[m[32m**Fix:** Updated the RoleBinding subject to `reporter`.[m[41m[7m^M[27m[m[m
+lab/FINDINGS.md:20: trailing whitespace.[m
+[32m+[m[41m[7m^M[27m[m[m
+:[K[K[?1l>[?2004h]0;eshwa@LAPTOP-U5P6LO7T: /mnt/c/Users/eshwa/Documents/enterprise-bot-devops[01;32meshwa@LAPTOP-U5P6LO7T[00m:[01;34m/mnt/c/Users/eshwa/Documents/enterprise-bot-devops[00m$ [7mgit status --short[27mgit status --short
+[?2004l [31mM[m lab/FINDINGS.md
+ [31mM[m lab/broken-chart/templates/backend.yaml
+ [31mM[m lab/broken-chart/templates/gateway.yaml
+ [31mM[m lab/broken-chart/templates/metrics.yaml
+ [31mM[m lab/broken-chart/templates/migrate-job.yaml
+ [31mM[m lab/broken-chart/templates/rbac.yaml
+ [31mM[m lab/broken-chart/templates/reporter.yaml
+ [31mM[m lab/broken-chart/templates/worker.yaml
+ [31mM[m lab/broken-chart/values.yaml
+[31m??[m part4-session.log
+[?2004h]0;eshwa@LAPTOP-U5P6LO7T: /mnt/c/Users/eshwa/Documents/enterprise-bot-devops[01;32meshwa@LAPTOP-U5P6LO7T[00m:[01;34m/mnt/c/Users/eshwa/Documents/enterprise-bot-devops[00m$ [7msed -i 's/\r$//' lab/FINDINGS.md[27msed -i 's/\r$//' lab/FINDINGS.md
+[?2004lsed: preserving permissions for ‘lab/sedIjJuNV’: Operation not permitted
+[?2004h]0;eshwa@LAPTOP-U5P6LO7T: /mnt/c/Users/eshwa/Documents/enterprise-bot-devops[01;32meshwa@LAPTOP-U5P6LO7T[00m:[01;34m/mnt/c/Users/eshwa/Documents/enterprise-bot-devops[00m$ [7mgit diff --check[27mgit diff --check
+[?2004l[?1h=[K[?1l>[?2004h]0;eshwa@LAPTOP-U5P6LO7T: /mnt/c/Users/eshwa/Documents/enterprise-bot-devops[01;32meshwa@LAPTOP-U5P6LO7T[00m:[01;34m/mnt/c/Users/eshwa/Documents/enterprise-bot-devops[00m$ [7mgit add lab/FINDINGS.md lab/broken-chart/templates/backend.yaml lab/broken-chart/t[27m[7me[27m[7mmplates/gateway.yaml lab/broken-chart/templates/metrics.yaml lab/broken-chart/templates/migrate-job.yaml lab/broken-chart/templates/rbac.yaml lab/broken-ch[27m[7ma[27m[7mrt/templates/reporter.yaml lab/broken-chart/templates/worker.yaml lab/broken-chart/values.yaml part4-session.log[27m[A[Agit add lab/FINDINGS.md lab/broken-chart/templates/backend.yaml lab/broken-chart/templates/gateway.yaml lab/broken-chart/templates/metrics.yaml lab/broken-chart/templates/migrate-job.yaml lab/broken-chart/templates/rbac.yaml lab/broken-chart/templates/reporter.yaml lab/broken-chart/templates/worker.yaml lab/broken-chart/values.yaml part4-session.log
+[?2004l[?2004h]0;eshwa@LAPTOP-U5P6LO7T: /mnt/c/Users/eshwa/Documents/enterprise-bot-devops[01;32meshwa@LAPTOP-U5P6LO7T[00m:[01;34m/mnt/c/Users/eshwa/Documents/enterprise-bot-devops[00m$ [7mgit status --short[27mgit status --short
+[?2004l[32mM[m  lab/FINDINGS.md
+[32mM[m  lab/broken-chart/templates/backend.yaml
+[32mM[m  lab/broken-chart/templates/gateway.yaml
+[32mM[m  lab/broken-chart/templates/metrics.yaml
+[32mM[m  lab/broken-chart/templates/migrate-job.yaml
+[32mM[m  lab/broken-chart/templates/rbac.yaml
+[32mM[m  lab/broken-chart/templates/reporter.yaml
+[32mM[m  lab/broken-chart/templates/worker.yaml
+[32mM[m  lab/broken-chart/values.yaml
+[32mA[m  part4-session.log
+[?2004h]0;eshwa@LAPTOP-U5P6LO7T: /mnt/c/Users/eshwa/Documents/enterprise-bot-devops[01;32meshwa@LAPTOP-U5P6LO7T[00m:[01;34m/mnt/c/Users/eshwa/Documents/enterprise-bot-devops[00m$ [7mgit diff --cached --stat[27mgit diff --cached --stat
+[?2004l[?1h= lab/FINDINGS.md                             |    85 [32m+[m[31m-[m[m
+ lab/broken-chart/templates/backend.yaml     |     1 [32m+[m[m
+ lab/broken-chart/templates/gateway.yaml     |     1 [32m+[m[m
+ lab/broken-chart/templates/me
