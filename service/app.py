@@ -1,11 +1,24 @@
 import json
 import os
+from pathlib import Path
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import socket
 
 
-APP_NAME = os.environ.get("APP_NAME", "demo-service")
-VERSION = os.environ.get("VERSION", "1.0.0")
+CONFIG_DIR = Path("/etc/enterprise-bot/config")
+
+
+def get_config(key, default):
+    """Read projected ConfigMap files, falling back to environment variables."""
+    config_file = CONFIG_DIR / key
+
+    try:
+        if config_file.is_file():
+            return config_file.read_text().strip()
+    except OSError:
+        pass
+
+    return os.environ.get(key, default)
 
 
 class RequestHandler(BaseHTTPRequestHandler):
@@ -19,8 +32,8 @@ class RequestHandler(BaseHTTPRequestHandler):
 
         if self.path == "/":
             payload = {
-                "app": os.environ.get("APP_NAME", APP_NAME),
-                "version": os.environ.get("VERSION", VERSION),
+                "app": get_config("APP_NAME", "demo-service"),
+                "version": get_config("VERSION", "1.0.0"),
                 "pod": socket.gethostname(),
             }
             body = json.dumps(payload).encode()
